@@ -1,0 +1,9 @@
+{
+	"name": "foma",
+	"version": "0.10.0",
+	"description": "Multi-purpose finite-state toolkit",
+	"dependencies": [
+		"readline",
+		"zlib"
+	]
+}
