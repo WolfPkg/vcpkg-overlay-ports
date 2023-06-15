@@ -1,0 +1,8 @@
+{
+	"name": "openfst",
+	"version": "1.7.9",
+	"description": "Weighted finite-state transducers library",
+	"dependencies": [
+		"dlfcn-win32"
+	]
+}

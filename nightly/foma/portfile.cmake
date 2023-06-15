@@ -21,6 +21,8 @@ vcpkg_configure_cmake(
 # Flex doesn't like running in parallel
 vcpkg_install_cmake(DISABLE_PARALLEL)
 
+vcpkg_fixup_pkgconfig()
+
 file(INSTALL "${SOURCE_PATH}/foma/COPYING" DESTINATION "${CURRENT_PACKAGES_DIR}/share/foma" RENAME copyright)
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")

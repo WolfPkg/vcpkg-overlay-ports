@@ -1,0 +1,10 @@
+{
+	"name": "lttoolbox",
+	"version": "3.7.4",
+	"description": "Finite state compiler, processor and helper tools used by apertium",
+	"dependencies": [
+		"libxml2",
+		"getopt",
+		"utfcpp"
+	]
+}

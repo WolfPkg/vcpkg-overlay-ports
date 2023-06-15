@@ -1,22 +1,30 @@
-include(vcpkg_common_functions)
-
 vcpkg_from_github(
 	OUT_SOURCE_PATH SOURCE_PATH
 	REPO apertium/lttoolbox
-	REF 841a0e9a032438d78f5b3ee6aa298daf9f9d0838
-	SHA512 fdc94bad9e42427c26ecfa055df9a19135716be09716214394530e626273d2221ee14c4eb4f8d7cce6aeb01222e6e0e34531e19f0954c8f0faa5f5f85547996c
-	HEAD_REF master
+	REF 3be1a443773469e2201a8c672abaf563ded7cbce
+	SHA512 a1d452e91ef84b6c5cf947acfa2148353da5c3a2ecc2728b803f10c4f825ffb0a42bdbfa086d5ea622fb1e974385fe787aede3dbd00e30b2b268e8b4c753b6e6
+	HEAD_REF main
+    PATCHES
+      "wall-to-w4.patch"
+      "no-pthread.patch"
 )
 
 vcpkg_find_acquire_program(PYTHON3)
 set(VCPKG_PYTHON_EXECUTABLE "${PYTHON3}")
 
-vcpkg_configure_cmake(
+vcpkg_configure_make(
 	SOURCE_PATH ${SOURCE_PATH}
-	PREFER_NINJA
+	AUTOCONFIG
+	OPTIONS
+		"CPPFLAGS=\$CPPFLAGS -I${CURRENT_INSTALLED_DIR}/include"
+		"CFLAGS=\$CFLAGS -I${CURRENT_INSTALLED_DIR}/include"
+		"CXXFLAGS=\$CXXFLAGS -I${CURRENT_INSTALLED_DIR}/include"
 )
 
-vcpkg_install_cmake()
+vcpkg_install_make()
+
+vcpkg_fixup_pkgconfig()
+
 file(INSTALL ${SOURCE_PATH}/COPYING DESTINATION ${CURRENT_PACKAGES_DIR}/share/lttoolbox RENAME copyright)
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")

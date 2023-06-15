@@ -1,0 +1,15 @@
+diff --git a/configure.ac b/configure.ac
+index cd691dc..1ff2e8c 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -25,8 +25,8 @@ AM_PROG_LIBTOOL
+ AM_SANITY_CHECK
+ AC_LANG_CPLUSPLUS
+ 
+-CFLAGS="-Wall -Wextra $CFLAGS"
+-CXXFLAGS="-Wall -Wextra $CXXFLAGS"
++CFLAGS="-W4 $CFLAGS"
++CXXFLAGS="-W4 $CXXFLAGS"
+ 
+ AC_ARG_ENABLE(debug,
+               [  --enable-debug  Enable "-g -Wall" compiler options],
