@@ -1,0 +1,14 @@
+{
+	"name": "cg3",
+	"version": "1.4.5",
+	"description": " Tools for the 3rd edition of the Constraint Grammar formalism",
+	"dependencies": [
+		"boost-container",
+		"boost-dynamic-bitset",
+		"boost-endian",
+		"boost-unordered",
+		"icu",
+		"getopt",
+		"sqlite3"
+	]
+}
