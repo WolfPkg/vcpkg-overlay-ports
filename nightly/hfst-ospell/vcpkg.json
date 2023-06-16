@@ -1,0 +1,10 @@
+{
+	"name": "hfst-ospell",
+	"version": "0.5.3",
+	"description": "Spell checker library and tool based on HFST",
+	"dependencies": [
+		"getopt",
+		"icu",
+		"libarchive"
+	]
+}
