@@ -16,9 +16,9 @@ vcpkg_configure_make(
 	SOURCE_PATH ${SOURCE_PATH}
 	AUTOCONFIG
 	OPTIONS
-		"CPPFLAGS=\$CPPFLAGS -I${CURRENT_INSTALLED_DIR}/include"
-		"CFLAGS=\$CFLAGS -I${CURRENT_INSTALLED_DIR}/include"
-		"CXXFLAGS=\$CXXFLAGS -I${CURRENT_INSTALLED_DIR}/include"
+		"CPPFLAGS=\$CPPFLAGS -I${CURRENT_INSTALLED_DIR}/include/utf8cpp"
+		"CFLAGS=\$CFLAGS -I${CURRENT_INSTALLED_DIR}/include/utf8cpp"
+		"CXXFLAGS=\$CXXFLAGS -std:c++latest -W4 -I${CURRENT_INSTALLED_DIR}/include/utf8cpp"
 )
 
 vcpkg_install_make()

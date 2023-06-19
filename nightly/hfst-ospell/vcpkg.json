@@ -3,6 +3,7 @@
 	"version": "0.5.3",
 	"description": "Spell checker library and tool based on HFST",
 	"dependencies": [
+		"boost-dynamic-bitset",
 		"getopt",
 		"icu",
 		"libarchive"
