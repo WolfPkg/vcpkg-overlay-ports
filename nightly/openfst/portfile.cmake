@@ -15,6 +15,8 @@ vcpkg_configure_make(
 	AUTOCONFIG
 	OPTIONS
 		"CPPFLAGS=\$CPPFLAGS -DNOMINMAX"
+		"CXXFLAGS=\$CXXFLAGS -std:c++17 -W4"
+		"LDFLAGS=\$LDFLAGS -Wl,-no-undefined"
 )
 
 vcpkg_install_make()
