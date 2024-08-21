@@ -1,6 +1,6 @@
 {
 	"name": "lttoolbox",
-	"version": "3.7.4",
+	"version": "3.7.12",
 	"description": "Finite state compiler, processor and helper tools used by apertium",
 	"dependencies": [
 		"libxml2",

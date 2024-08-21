@@ -1,27 +1,22 @@
 vcpkg_from_github(
 	OUT_SOURCE_PATH SOURCE_PATH
 	REPO apertium/lttoolbox
-	REF 3be1a443773469e2201a8c672abaf563ded7cbce
-	SHA512 a1d452e91ef84b6c5cf947acfa2148353da5c3a2ecc2728b803f10c4f825ffb0a42bdbfa086d5ea622fb1e974385fe787aede3dbd00e30b2b268e8b4c753b6e6
+	REF b248842a216a470f8bb47d31f5ec7c746d6935e1
+	SHA512 728d77975f67e1dc6186b41ca6b15a666f471e04997cf2d48df8fcea411c8048812c1c0d0137629cc98fb60e7b35f648c461602d24ed17462c0ec44433267e8f
 	HEAD_REF main
-    PATCHES
-      "wall-to-w4.patch"
-      "no-pthread.patch"
+	PATCHES
+		undo-stoi.patch
 )
 
 vcpkg_find_acquire_program(PYTHON3)
 set(VCPKG_PYTHON_EXECUTABLE "${PYTHON3}")
 
-vcpkg_configure_make(
+vcpkg_configure_cmake(
 	SOURCE_PATH ${SOURCE_PATH}
-	AUTOCONFIG
-	OPTIONS
-		"CPPFLAGS=\$CPPFLAGS -I${CURRENT_INSTALLED_DIR}/include/utf8cpp"
-		"CFLAGS=\$CFLAGS -I${CURRENT_INSTALLED_DIR}/include/utf8cpp"
-		"CXXFLAGS=\$CXXFLAGS -std:c++latest -W4 -I${CURRENT_INSTALLED_DIR}/include/utf8cpp"
+	OPTIONS -DBUILD_TESTING=OFF
 )
 
-vcpkg_install_make()
+vcpkg_install_cmake()
 
 vcpkg_fixup_pkgconfig()
 
